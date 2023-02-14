@@ -1,8 +1,22 @@
 // ITERATION 1
 
+window.addEventListener('load', () => {
+  const calculatePricesBtn = document.getElementById('calculate');
+  calculatePricesBtn.addEventListener('click', calculateAll);
+});
+
+const product = document.querySelector('.product')
+
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
-
+  const price = document.querySelector('.price span');
+  const quantity = document.querySelector('input');
+  const priceValue = Number(price.innerHTML);
+  const quantityValue = Number(quantity.value);
+  const subtotalValue = (priceValue * quantityValue).toString();
+  const subtotal = document.querySelector('.subtotal span')
+  subtotal.innerHTML = subtotalValue;
+  return subtotalValue;
   //... your code goes here
 }
 
