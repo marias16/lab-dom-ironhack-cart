@@ -14,7 +14,7 @@ function updateSubtotal(product) {
 
   const subtotal = product.querySelector('.subtotal span')
   subtotal.innerHTML = subtotalValue;
-  return subtotalValue;
+  return Number(subtotalValue);
 }
 
 function calculateAll() {
@@ -25,7 +25,8 @@ function calculateAll() {
     totalCost += updateSubtotal(productElem);
   }
   // ITERATION 3
-  //... your code goes here
+  const totalShow = document.querySelector('#total-value span')
+  totalShow.innerHTML = totalCost;
 }
 
 // ITERATION 4
